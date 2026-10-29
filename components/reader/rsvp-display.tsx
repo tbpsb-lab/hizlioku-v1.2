@@ -14,8 +14,6 @@ type RsvpDisplayProps = {
   onToggle: () => void
 }
 
-const GLYPH_WIDTH_EM = 0.64
-
 export function RsvpDisplay({
   word,
   playing,
@@ -26,11 +24,9 @@ export function RsvpDisplay({
   onToggle,
 }: RsvpDisplayProps) {
   const [before, pivot, after] = splitAtPivot(word)
-  // Sized once from the longest word side in the whole text so the size never jumps between words.
-  const fitCqi = 48 / (GLYPH_WIDTH_EM * (maxSide + 0.5))
 
   const wordStyle = {
-    fontSize: `min(calc(var(--word-base) * ${fontScale}), ${fitCqi.toFixed(2)}cqi)`,
+    fontSize: `calc(var(--word-base) * ${fontScale})`,
     ...(fontFamily ? { '--reader-font': fontFamily } : {}),
   } as CSSProperties
 
