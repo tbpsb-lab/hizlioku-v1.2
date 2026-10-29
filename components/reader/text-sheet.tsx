@@ -36,13 +36,13 @@ function TextSheetBody({ initialText, onClose, onApply }: Omit<TextSheetProps, '
         type="button"
         aria-label="Kapat"
         onClick={onClose}
-        className="absolute inset-0 bg-foreground/20 animate-in fade-in duration-300"
+        className="absolute inset-0 bg-black/50 backdrop-blur-md animate-in fade-in duration-300"
       />
       <div
         role="dialog"
         aria-modal="true"
         aria-labelledby="text-sheet-title"
-        className="panel relative flex max-h-[85dvh] w-full max-w-2xl flex-col gap-3 rounded-b-none p-4 pb-[max(1rem,env(safe-area-inset-bottom))] animate-in slide-in-from-bottom-8 fade-in duration-300 sm:rounded-b-(--panel-radius) sm:p-5"
+        className="panel panel-solid relative flex max-h-[85dvh] w-full max-w-2xl flex-col gap-3 rounded-b-none p-4 pb-[max(1rem,env(safe-area-inset-bottom))] shadow-2xl animate-in slide-in-from-bottom-8 fade-in duration-300 sm:rounded-b-(--panel-radius) sm:p-5"
       >
         <div className="flex items-center justify-between gap-3">
           <div>
@@ -65,7 +65,7 @@ function TextSheetBody({ initialText, onClose, onApply }: Omit<TextSheetProps, '
           value={draft}
           onChange={(e) => setDraft(e.target.value)}
           rows={10}
-          className="min-h-40 w-full flex-1 resize-none rounded-[calc(var(--panel-radius)*0.6)] border border-border bg-background/60 p-3 font-reader text-[15px] leading-relaxed text-foreground outline-none placeholder:text-muted-foreground focus-visible:ring-2 focus-visible:ring-ring"
+          className="min-h-40 w-full flex-1 resize-none rounded-[calc(var(--panel-radius)*0.6)] border border-border bg-background p-3 font-reader text-[15px] leading-relaxed text-foreground outline-none placeholder:text-muted-foreground focus-visible:ring-2 focus-visible:ring-ring"
           placeholder="Metninizi buraya yapıştırın…"
         />
 
